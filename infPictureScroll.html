@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seamless Scrolling Image</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Container for the scrolling image */
+        .scroll-container {
+            overflow: hidden;
+            height: 300px; /* Adjust height to control visible area */
+            position: relative;
+        }
+
+        /* Scrolling effect for the image */
+        .scroll-image {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            animation: scrollUp 10s linear infinite; /* Adjust the duration to control speed */
+        }
+
+        /* Animation for scrolling */
+        @keyframes scrollUp {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-50%); /* Scroll up by half the container's height to loop */
+            }
+        }
+
+        /* Styling for the images within the scroll container */
+        .scroll-image img {
+            width: 100%;
+            /* Make sure each image takes up the full width of the container */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-4">
+    <div class="row">
+        <!-- Left Column: Text -->
+        <div class="col-md-6">
+            <h2>Your Heading</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec eros eget magna luctus ullamcorper.</p>
+        </div>
+
+        <!-- Right Column: Scrolling Image -->
+        <div class="col-md-6">
+            <div class="scroll-container">
+                <!-- Duplicate images inside the scroll container for seamless looping -->
+                <div class="scroll-image">
+                    <img src="Naslovna.jpg" alt="Scrolling Image">
+                    <img src="Naslovna.jpg" alt="Scrolling Image">
+                    <img src="Naslovna.jpg" alt="Scrolling Image">
+                    <img src="Naslovna.jpg" alt="Scrolling Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
